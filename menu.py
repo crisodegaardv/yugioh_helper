@@ -4,7 +4,7 @@ from termcolor import colored, cprint
 
 class Menu:
   def __init__(self):
-    self.db = DatabaseManager()
+    self.database = DatabaseManager()
   
   def main_menu(self):
     while True:
@@ -17,11 +17,12 @@ class Menu:
       choice = input("Enter your choice: ")
       
       if choice == "1":
-        print("hace esto")
+        self.get_cards()
       elif choice == "2":
         self.sub_menu_1()
       elif choice == "3":
         print("y este otro deah que le pasaba")
+      elif choice == "4":
         break
       else:
         print("Invalid data, ponte vío")
@@ -40,5 +41,10 @@ class Menu:
       else:
         print("opción invalida")
       
-  def get_cards():
-    pass
+  def get_cards(self):
+    cards = self.database.get_cards()
+    if cards:
+      for card in cards:
+        print(f"\nID: {card[0]}, Name: {card[1]}, Description: {card[2]}")
+    else: 
+      print("No cards found")
