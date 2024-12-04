@@ -1,0 +1,10 @@
+Main Menu:
+  1. Check cards
+  2. Check decks
+  3. Check combos
+  4. Exit
+
+
+
+TODO:
+Create one option to get info from the db
