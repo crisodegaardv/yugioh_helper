@@ -1,9 +1,10 @@
 import sys
+from db import DatabaseManager
 from termcolor import colored, cprint
 
 class Menu:
-  def __init__(self, db_name):
-    self.db = db_name
+  def __init__(self):
+    self.db = DatabaseManager()
   
   def main_menu(self):
     while True:
@@ -39,4 +40,5 @@ class Menu:
       else:
         print("opción invalida")
       
-  def get_cards()
+  def get_cards():
+    pass

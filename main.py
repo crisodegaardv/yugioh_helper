@@ -3,8 +3,8 @@ from card import Card
 from db import DatabaseManager
 
 class CardApp:
-  def __init__(self, db_name):
-    self.db = DatabaseManager(db_name)
+  def __init__(self):
+    self.db = DatabaseManager()
     self.table_name = "cards"
     #self.setup_database()
     
@@ -36,7 +36,7 @@ def main():
 if __name__ == "__main__":
   main()
   
-  app = CardApp("yugioh_helper")
+  app = CardApp()
   
   card1 = Card(
     "Sky Striker Ace - Raye", 
