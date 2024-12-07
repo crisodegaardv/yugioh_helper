@@ -28,7 +28,6 @@ class CardApp:
     self.database.close()
 
 def main():
-  pass
   menu = Menu()
   menu.main_menu()
     
@@ -53,4 +52,3 @@ if __name__ == "__main__":
   #app.add_card(card2)
   #print("All cards in the database:")
   #app.show_all_cards()
-  app.close()

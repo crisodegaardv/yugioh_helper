@@ -23,7 +23,19 @@ class DatabaseManager:
     
     return result
   
-  def insert_card_manually(self):
+  def insert_card_manually(self, card_data):
     db_connection = self.get_connection()
-    
+    cursor = db_connection.cursor()
 
+    query = f"INSERT INTO cards (name, description, card_type) VALUES (?, ?, ?)"
+    cursor.execute(query, card_data)
+    db_connection.commit()
+    
+    cursor.close()
+    db_connection.close()
+    
+#db = DatabaseManager()
+#new_card = ("el pepe", "destruye todo el campo", "magica")
+#db.insert_card_manually(new_card)
+#cards = db.get_table_data("cards")
+#print(cards)

@@ -12,7 +12,8 @@ class Menu:
       cprint("1. Check cards", "cyan")
       cprint("2. Check decks", "cyan")
       cprint("3. Check combos", "cyan")
-      cprint("4. Exit", "red")
+      cprint("4. Insert card manually")
+      cprint("5. Exit", "red")
       
       choice = input("Enter your choice: ")
       
@@ -23,6 +24,8 @@ class Menu:
       elif choice == "3":
         print("y este otro deah que le pasaba")
       elif choice == "4":
+        self.insert_card_manually()
+      elif choice == "5":
         break
       else:
         print("Invalid data, ponte vío")
@@ -42,9 +45,20 @@ class Menu:
         print("opción invalida")
       
   def get_cards(self):
-    cards = self.database.get_cards()
+    cards = self.database.get_table_data("cards")
     if cards:
       for card in cards:
         print(f"\nID: {card[0]}, Name: {card[1]}, Description: {card[2]}")
     else: 
       print("No cards found")
+      
+  def insert_card_manually(self):
+    card_name = input("Enter card name: ")
+    card_description = input("Enter card description: ")
+    card_type = input("Enter card type: ")
+    
+    card_data = (card_name, card_description, card_type)
+    
+    self.database.insert_card_manually(card_data)
+    print("card has been added to the db")
+    
