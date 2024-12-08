@@ -23,11 +23,13 @@ class DatabaseManager:
     
     return result
   
-  def insert_card_manually(self, card_data):
+  def insert_card_manually(self, card: Card):
     db_connection = self.get_connection()
     cursor = db_connection.cursor()
 
     query = f"INSERT INTO cards (name, description, card_type) VALUES (?, ?, ?)"
+    card_data = (card.name, card.description, card.card_type)
+    
     cursor.execute(query, card_data)
     db_connection.commit()
     

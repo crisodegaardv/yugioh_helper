@@ -57,8 +57,8 @@ class Menu:
     card_description = input("Enter card description: ")
     card_type = input("Enter card type: ")
     
-    card_data = (card_name, card_description, card_type)
+    card = Card(card_name, card_description, card_type)
     
-    self.database.insert_card_manually(card_data)
-    print("card has been added to the db")
+    self.database.insert_card_manually(card)
+    print("\nCard has been added to the db")
     

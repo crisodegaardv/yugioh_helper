@@ -33,22 +33,4 @@ def main():
     
 if __name__ == "__main__":
   main()
-  
   app = CardApp()
-  
-  card1 = Card(
-    "Sky Striker Ace - Raye", 
-    "(Quick Effect): You can Tribute this card; Special Summon 1 'Sky Striker Ace'.",
-    "Monster"
-  )
-  
-  card2 = Card(
-    "Sky Striker Maneuver - Afterburners", 
-    "If you control no monsters in your Main Monster Zones: Destroy 1 face-up monster on the field.",
-    "Spell"
-  )
-  
-  #app.add_card(card1)
-  #app.add_card(card2)
-  #print("All cards in the database:")
-  #app.show_all_cards()
