@@ -23,7 +23,7 @@ class DatabaseManager:
     
     return result
   
-  def insert_card_manually(self, card: Card):
+  def insert_card_manually(self, card):
     db_connection = self.get_connection()
     cursor = db_connection.cursor()
 
